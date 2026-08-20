@@ -55,12 +55,12 @@
         .section-heading { display: grid; grid-template-columns: 1fr 2fr; gap: 8vw; margin-bottom: 30px; }
         h2 { font-family: var(--serif); font-size: clamp(1.45rem, 2.35vw, 2.15rem); font-weight: normal; letter-spacing: -.04em; line-height: 1.1; }
         .section-heading p { max-width: 540px; color: var(--muted); font-size: 1.12rem; }
-        .publication { display: grid; grid-template-columns: 100px 1fr auto; gap: 24px; align-items: start; padding: 25px 0; border-top: 1px solid var(--line); }
+        .publication { display: grid; grid-template-columns: 100px 1fr auto; gap: 24px; align-items: start; padding: 25px 0; }
+        .publication + .publication { border-top: 1px solid var(--line); }
         .pub-year { color: var(--orange); font-size: .8rem; font-weight: bold; letter-spacing: .1em; }
         .publication h3 { margin: 0 0 7px; font-family: var(--serif); font-size: 1.35rem; font-weight: normal; line-height: 1.2; }
         .publication p { margin: 0; color: var(--muted); font-size: .9rem; }
         .pub-link { color: var(--orange); font-size: .78rem; font-weight: bold; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
-        .project-list { border-top: 1px solid var(--line); }
         .project { display: grid; grid-template-columns: 1fr 2fr; gap: 8vw; padding: 24px 0; border-bottom: 1px solid var(--line); }
         .project:last-child { border-bottom: 0; }
         .project h3 { margin: 0; font-family: var(--serif); font-size: 1.35rem; font-weight: normal; }
