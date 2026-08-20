@@ -27,7 +27,7 @@
             line-height: 1.6;
         }
         a { color: inherit; }
-        .site-header, main, footer { max-width: 1180px; margin: 0 auto; padding-left: 6vw; padding-right: 6vw; }
+        .site-header, main { max-width: 1180px; margin: 0 auto; padding-left: 6vw; padding-right: 6vw; }
         .site-header { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
         .identity-group { display: flex; align-items: center; gap: 18px; min-width: 0; }
         .profile-frame { width: 150px; height: 150px; flex: 0 0 auto; overflow: hidden; border: 1px solid var(--line); border-radius: 50%; }
@@ -35,6 +35,7 @@
         .identity { display: flex; flex-direction: column; gap: 2px; }
         .mark { color: var(--orange); font-family: var(--serif); font-size: 1.65rem; font-weight: bold; letter-spacing: .04em; text-decoration: none; }
         .subtitle { color: var(--orange); font-size: .82rem; font-weight: bold; letter-spacing: .03em; }
+        .affiliation { color: var(--muted); font-size: .78rem; letter-spacing: .03em; }
         nav { display: flex; gap: 26px; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
         nav a { text-decoration: none; }
         nav a:hover, nav a:focus { color: var(--orange); }
@@ -50,21 +51,30 @@
         .orbit::before, .orbit::after { content: ""; position: absolute; inset: 15%; border: 1px solid var(--orange); border-radius: 50%; transform: rotate(42deg) scaleX(.45); }
         .orbit::after { transform: rotate(-42deg) scaleX(.45); }
         .orbit-label { position: absolute; top: 48%; left: 50%; width: 185px; transform: translate(-50%, -50%); color: var(--orange); background: var(--paper); font-family: var(--serif); font-size: 1rem; line-height: 1.25; text-align: center; }
-        .section { border-top: 1px solid var(--line); padding-top: 75px; padding-bottom: 95px; }
-        .section-heading { display: grid; grid-template-columns: 1fr 2fr; gap: 8vw; margin-bottom: 45px; }
-        h2 { font-family: var(--serif); font-size: clamp(1.65rem, 2.7vw, 2.5rem); font-weight: normal; letter-spacing: -.04em; line-height: 1.08; }
+        .section { border-top: 1px solid var(--line); padding-top: 52px; padding-bottom: 65px; }
+        .section-heading { display: grid; grid-template-columns: 1fr 2fr; gap: 8vw; margin-bottom: 30px; }
+        h2 { font-family: var(--serif); font-size: clamp(1.45rem, 2.35vw, 2.15rem); font-weight: normal; letter-spacing: -.04em; line-height: 1.1; }
         .section-heading p { max-width: 540px; color: var(--muted); font-size: 1.12rem; }
         .publication { display: grid; grid-template-columns: 100px 1fr auto; gap: 24px; align-items: start; padding: 25px 0; border-top: 1px solid var(--line); }
         .pub-year { color: var(--orange); font-size: .8rem; font-weight: bold; letter-spacing: .1em; }
         .publication h3 { margin: 0 0 7px; font-family: var(--serif); font-size: 1.35rem; font-weight: normal; line-height: 1.2; }
         .publication p { margin: 0; color: var(--muted); font-size: .9rem; }
         .pub-link { color: var(--orange); font-size: .78rem; font-weight: bold; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
-        .contact { display: grid; grid-template-columns: 1fr 2fr; gap: 8vw; align-items: end; }
+        .project-list { border-top: 1px solid var(--line); }
+        .project { display: grid; grid-template-columns: 1fr 2fr; gap: 8vw; padding: 24px 0; border-bottom: 1px solid var(--line); }
+        .project:last-child { border-bottom: 0; }
+        .project h3 { margin: 0; font-family: var(--serif); font-size: 1.35rem; font-weight: normal; }
+        .project p { max-width: 540px; margin: 0; color: var(--muted); font-size: .95rem; }
+        .multiomics-collage { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin-top: 18px; }
+        .multiomics-figure { margin: 0; border: 1px solid var(--line); background: var(--white); }
+        .multiomics-figure img { display: block; width: 100%; height: auto; }
+        .llm-figure { aspect-ratio: 1.35; overflow: hidden; }
+        .llm-figure img { width: 125%; max-width: none; transform: translate(-10%, -8%) scale(1.08); transform-origin: center center; }
+        .contact { display: grid; grid-template-columns: 1fr 2fr; gap: 8vw; align-items: center; padding-top: 38px; padding-bottom: 42px; }
         .contact h2 { margin-bottom: 0; }
-        .contact-links { display: flex; flex-wrap: wrap; gap: 24px; }
-        .contact-links a { color: var(--orange); font-family: var(--serif); font-size: 1.2rem; text-decoration: none; }
+        .contact-links { display: flex; flex-wrap: wrap; gap: 18px 28px; }
+        .contact-links a { color: var(--orange); font-family: var(--serif); font-size: 1.05rem; text-decoration: none; }
         .contact-links a:hover { text-decoration: underline; text-underline-offset: 5px; }
-        footer { display: flex; justify-content: space-between; padding-top: 22px; padding-bottom: 28px; border-top: 1px solid var(--line); color: var(--muted); font-size: .75rem; }
         @media (max-width: 700px) {
             .site-header { align-items: flex-start; gap: 18px; }
             .identity-group { gap: 12px; }
@@ -73,10 +83,9 @@
             .hero, .section-heading, .contact { grid-template-columns: 1fr; gap: 35px; }
             .hero { min-height: auto; padding-top: 75px; }
             .orbit { width: min(75vw, 330px); margin: 15px auto 0; }
-            .section { padding-top: 55px; padding-bottom: 65px; }
+            .section { padding-top: 40px; padding-bottom: 48px; }
             .publication { grid-template-columns: 1fr; gap: 8px; }
             .pub-link { margin-top: 8px; }
-            footer { gap: 18px; flex-direction: column; }
         }
         @media print { nav, .orbit, .arrow-link, .pub-link { display: none; } .hero { min-height: auto; } }
     </style>
@@ -90,13 +99,14 @@
             <div class="identity">
                 <a class="mark" href="#top" aria-label="Vaibhav Gupta home">Vaibhav Gupta</a>
                 <span class="subtitle">Theoretical and computational physicist</span>
+                <span class="affiliation">University of Illinois Urbana-Champaign (UIUC)</span>
             </div>
         </div>
         <nav aria-label="Primary navigation">
             <a href="#research">Research</a>
             <a href="#publications">Publications</a>
+            <a href="#projects">Projects</a>
             <a href="cv.pdf">CV</a>
-            <a href="resume.pdf">Resume</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -116,16 +126,23 @@
         <section class="section" id="publications" aria-labelledby="publications-title">
             <div class="section-heading"><h2 id="publications-title">Selected<br>publications</h2></div>
             <article class="publication"><div class="pub-year">2026</div><div><h3>Stable Real-Space Invariants and Topology beyond Symmetry Indicators</h3><p>Y. Hwang, <strong>V. Gupta</strong>, et al. &middot; Nature Communications 17, 8564</p></div><a class="pub-link" href="https://doi.org/10.1038/s41467-026-74844-w" target="_blank" rel="noreferrer">Read paper &nearr;</a></article>
-            <article class="publication"><div class="pub-year">2026</div><div><h3>Building Blocks of Topological Band Theory for Photonic Crystals</h3><p>Y. Hwang, <strong>V. Gupta</strong>, et al. &middot; arXiv:2601.06293</p></div><a class="pub-link" href="https://arxiv.org/abs/2601.06293" target="_blank" rel="noreferrer">Read paper &nearr;</a></article>
+            <article class="publication"><div class="pub-year">2026</div><div><h3>Building Blocks of Topological Band Theory for Photonic Crystals</h3><p>Y. Hwang, <strong>V. Gupta</strong>, et al. &middot; Under review at Nature Communications</p></div><a class="pub-link" href="https://arxiv.org/abs/2601.06293" target="_blank" rel="noreferrer">Read paper &nearr;</a></article>
             <article class="publication"><div class="pub-year">2022</div><div><h3>Wannier-Function Methods for Topological Modes in One-Dimensional Photonic Crystals</h3><p><strong>V. Gupta</strong> and B. Bradlyn &middot; Physical Review A 105, 053521</p></div><a class="pub-link" href="https://doi.org/10.1103/PhysRevA.105.053521" target="_blank" rel="noreferrer">Read paper &nearr;</a></article>
             <article class="publication"><div class="pub-year">2020</div><div><h3>Size-Stretched Exponential Relaxation in a Model with Arrested States</h3><p><strong>V. Gupta</strong>, S. K. Nandi, and M. Barma &middot; Physical Review E 102, 022103</p></div><a class="pub-link" href="https://doi.org/10.1103/PhysRevE.102.022103" target="_blank" rel="noreferrer">Read paper &nearr;</a></article>
         </section>
 
+        <section class="section" id="projects" aria-labelledby="projects-title">
+            <div class="section-heading"><h2 id="projects-title">Personal<br>projects</h2></div>
+            <div class="project-list">
+                <article class="project"><h3>Multiomics</h3><div><p>An independent project exploring questions and methods in multiomics.</p><div class="multiomics-collage" aria-label="Multiomics project figures"><figure class="multiomics-figure"><img src="assets/multiomics/manhattan_plot.png" alt="Manhattan plot from the Multiomics project"></figure><figure class="multiomics-figure"><img src="assets/multiomics/expression_in_samples.png" alt="Gene expression across samples"></figure><figure class="multiomics-figure"><img src="assets/multiomics/expressed_hallmark_gene_sets.png" alt="Expressed hallmark gene sets"></figure></div></div></article>
+                <article class="project"><h3>Transformers and large language models</h3><div><p>An independent project focused on building an understanding of transformer architectures and large language models.</p><div class="multiomics-collage" aria-label="Large language model project figure"><figure class="multiomics-figure llm-figure"><img src="assets/llms/bert_embedding_dog.png" alt="BERT embedding visualization of a dog"></figure></div></div></article>
+            </div>
+        </section>
+
         <section class="section contact" id="contact" aria-labelledby="contact-title">
-            <h2 id="contact-title">Get in<br>touch.</h2>
-            <div><p class="intro">For collaborations, questions, or a conversation about the work, reach out here.</p><div class="contact-links"><a href="mailto:YOUR-EMAIL">Email &nearr;</a><a href="https://github.com/YOUR-USERNAME">GitHub &nearr;</a><a href="javascript:window.print()">Print CV &nearr;</a></div></div>
+            <h2 id="contact-title">Contact<br>information</h2>
+            <div class="contact-links"><a href="mailto:vaibhav.1395@gmail.com">vaibhav.1395@gmail.com &nearr;</a><a href="https://www.linkedin.com/in/vaibhav-gupta-331904b0" target="_blank" rel="noreferrer">LinkedIn &nearr;</a><a href="https://scholar.google.com/citations?hl=en&amp;user=EkZlTR8AAAAJ" target="_blank" rel="noreferrer">Google Scholar &nearr;</a></div>
         </section>
     </main>
-    <footer><span>Vaibhav Gupta</span><span>Academic research website &middot; 2026</span></footer>
 </body>
 </html>
