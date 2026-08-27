@@ -54,6 +54,8 @@
         .project:last-child { border-bottom: 0; }
         .project h3 { margin: 0; font-family: var(--serif); font-size: clamp(1.1rem, 1.45vw, 1.5rem); font-weight: normal; line-height: 1.2; }
         .project p { max-width: 540px; margin: 0; color: var(--muted); font-size: .95rem; }
+        .project-link { display: inline-block; margin-top: 12px; color: var(--orange); font-size: .78rem; font-weight: bold; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+        .project-link:hover { text-decoration: underline; text-underline-offset: 5px; }
         .carousel { position: relative; margin-top: 18px; border: 1px solid var(--line); background: var(--white); overflow: hidden; }
         .carousel-container { position: relative; width: 100%; display: flex; align-items: center; justify-content: center; min-height: 400px; }
         .carousel-inner { display: flex; transition: transform 0.3s ease; width: 100%; }
@@ -134,6 +136,7 @@
                     <h3>Multiomics</h3>
                     <div>
                         <p>The goal of this project was to get familiar with genomics and start working with real data from patients. First, I chose Inflammatory Bowel Disease (IBD) as the disease to study. Then, I used an IBD Genome-wide Association Study (GWAS) to find genes whose variants are associated with a positive diagnosis in patients. After finding the candidate genes, I cross-referenced the functional behavior of these genes in the patients using the expression levels of the gene sets which the candidate genes belong to. I found that the gene sets with the most associated and expressed genes are known to be related to symptoms of IBD such as inflammation and abnormal immune response.</p>
+                        <a class="project-link" href="https://github.com/vg137/ibd-multiomics" target="_blank" rel="noreferrer">View on GitHub &nearr;</a>
                         <div class="carousel" aria-label="Multiomics project figures carousel">
                             <div class="carousel-container">
                                 <div class="carousel-inner" id="carousel-multiomics">
@@ -150,7 +153,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="project"><h3>Transformers and large language models</h3><div><p>This project deals with understanding the behavior of LLMs and transformers by dissecting a standard but relatively small LLM developed by Google called BERT. Below, we can see how BERT makes connections between semantically similar words.</p><div class="llm-container"><img src="assets/llms/bert_embedding_dog.png" alt="BERT embedding visualization of a dog"></div></div></article>
+                <article class="project"><h3>Transformers and large language models</h3><div><p>This project deals with understanding the behavior of LLMs and transformers by dissecting a standard but relatively small LLM developed by Google called BERT. Below, we can see how BERT makes connections between semantically similar words.</p><a class="project-link" href="https://github.com/vg137/bert-dissection" target="_blank" rel="noreferrer">View on GitHub &nearr;</a><div class="llm-container"><img src="assets/llms/bert_embedding_dog.png" alt="BERT embedding visualization of a dog"></div></div></article>
             </div>
         </section>
 
@@ -164,7 +167,7 @@
 
         <section class="section contact" id="contact" aria-labelledby="contact-title">
             <h2 id="contact-title">Contact<br>and profiles</h2>
-            <div class="contact-links"><a href="mailto:vaibhav.1395@gmail.com">vaibhav.1395@gmail.com &nearr;</a><a href="https://www.linkedin.com/in/vaibhav-gupta-331904b0" target="_blank" rel="noreferrer">LinkedIn &nearr;</a></div>
+            <div class="contact-links"><a href="mailto:vaibhav.1395@gmail.com">vaibhav.1395@gmail.com &nearr;</a><a href="https://www.linkedin.com/in/vaibhav-gupta-331904b0" target="_blank" rel="noreferrer">LinkedIn &nearr;</a><a href="https://github.com/vg137" target="_blank" rel="noreferrer">GitHub &nearr;</a></div>
         </section>
     </main>
     <script>
